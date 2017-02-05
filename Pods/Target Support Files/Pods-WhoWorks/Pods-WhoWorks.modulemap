@@ -1,0 +1,6 @@
+framework module Pods_WhoWorks {
+  umbrella header "Pods-WhoWorks-umbrella.h"
+
+  export *
+  module * { export * }
+}
