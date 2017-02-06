@@ -12,6 +12,8 @@
 		A10ECE5A1E3FD42E0000A557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10ECE581E3FD42E0000A557 /* Main.storyboard */; };
 		A10ECE5C1E3FD42E0000A557 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A10ECE5B1E3FD42E0000A557 /* Assets.xcassets */; };
 		A10ECE5F1E3FD42E0000A557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10ECE5D1E3FD42E0000A557 /* LaunchScreen.storyboard */; };
+		A11D7BF71E47866B00FD421E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D7BF61E47866B00FD421E /* User.swift */; };
+		A11D7BF91E47F13600FD421E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D7BF81E47F13600FD421E /* Users.swift */; };
 		A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F31E4760FB00CC502A /* UserService.swift */; };
 		A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F51E47653400CC502A /* LoginViewController.swift */; };
 		F84E2279ABA64AEB0BC31086 /* Pods_WhoWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95680E741246E80266ABAD73 /* Pods_WhoWorks.framework */; };
@@ -44,6 +46,8 @@
 		A10ECE5B1E3FD42E0000A557 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A10ECE5E1E3FD42E0000A557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A10ECE601E3FD42E0000A557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A11D7BF61E47866B00FD421E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A11D7BF81E47F13600FD421E /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		A15F2C2D1E467867002FAF24 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		A1EFC2F31E4760FB00CC502A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A1EFC2F51E47653400CC502A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		A10ECE531E3FD42E0000A557 /* WhoWorks */ = {
 			isa = PBXGroup;
 			children = (
+				A11D7BF31E47865A00FD421E /* Models */,
 				A17340FB1E476FEF00E9B8CB /* Services */,
 				A17340FA1E476FCC00E9B8CB /* Controllers */,
 				A10ECE541E3FD42E0000A557 /* AppDelegate.swift */,
@@ -101,6 +106,15 @@
 				A10ECE601E3FD42E0000A557 /* Info.plist */,
 			);
 			path = WhoWorks;
+			sourceTree = "<group>";
+		};
+		A11D7BF31E47865A00FD421E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A11D7BF61E47866B00FD421E /* User.swift */,
+				A11D7BF81E47F13600FD421E /* Users.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A15F2C2E1E467867002FAF24 /* Products */ = {
@@ -288,6 +302,8 @@
 				A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */,
 				A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */,
 				A10ECE571E3FD42E0000A557 /* ViewController.swift in Sources */,
+				A11D7BF71E47866B00FD421E /* User.swift in Sources */,
+				A11D7BF91E47F13600FD421E /* Users.swift in Sources */,
 				A10ECE551E3FD42E0000A557 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

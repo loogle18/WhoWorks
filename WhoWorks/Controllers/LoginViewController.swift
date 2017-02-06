@@ -8,26 +8,28 @@
 
 import UIKit
 import Foundation
+import Alamofire
+import Alamofire_Synchronous
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
-    var parameters : [String:Any] = [
-        "user": [
-            "email": "logan@w.com",
-            "login": "logan19",
-            "password": "password",
-            "status_code": 0
-        ]
-    ]
+    
+    var users = [User]()
     
     override func viewDidLoad() {
-        UserService.getUsers()
-    
+        super.viewDidLoad()
+        self.users = UserService.getUsers()
+        print(self.users)
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        UserService.postUser(params: parameters)
+//        let params : [String:Any] = [
+//            "email": emailTextField ?? "",
+//            "password": passwordTextField.text ?? ""
+//        ]
+//        
+//        UserService.postUser(params)
     }
 }

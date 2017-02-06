@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name or emai" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c2Y-th-O99">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c2Y-th-O99">
                                 <rect key="frame" x="16" y="219" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -70,9 +70,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="kYF-4B-QNf"/>
                     <connections>
+                        <outlet property="emailTextField" destination="c2Y-th-O99" id="vXv-4P-1r6"/>
                         <outlet property="enterButton" destination="TM0-gq-3hh" id="C8v-xc-44D"/>
                         <outlet property="passwordTextField" destination="WQI-NI-Jfo" id="gOj-2h-j33"/>
-                        <outlet property="userNameTextField" destination="c2Y-th-O99" id="l3W-ZJ-yz9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
