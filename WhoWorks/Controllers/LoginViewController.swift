@@ -8,28 +8,37 @@
 
 import UIKit
 import Foundation
-import Alamofire
-import Alamofire_Synchronous
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var emailTextField : UITextField!
+    @IBOutlet weak var passwordTextField : UITextField!
+    @IBOutlet weak var enterButton : UIButton!
     
     var users = [User]()
+    var authUserResponse : Any = 400
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.users = UserService.getUsers()
-        print(self.users)
+        UICustomizationService.defaultTextFieldUI(emailTextField)
+        UICustomizationService.defaultTextFieldUI(passwordTextField)
     }
     
-    @IBAction func loginAction(_ sender: Any) {
-//        let params : [String:Any] = [
-//            "email": emailTextField ?? "",
-//            "password": passwordTextField.text ?? ""
-//        ]
-//        
-//        UserService.postUser(params)
+    @IBAction func onFocusTextField(_ sender: UITextField) {
+        UICustomizationService.defaultTextFieldUI(sender)
+    }
+    
+    @IBAction func loginAction(_ sender: UIButton) {
+        let (email, password) = (emailTextField!, passwordTextField!)
+        let frontEmailValid = ValidationService.frontValidation(email, fieldName: "Email")
+        let frontPasswordValid = ValidationService.frontValidation(password, fieldName: "Password")
+        
+        if frontEmailValid && frontPasswordValid {
+            let params = [email.text!, password.text!]
+            self.authUserResponse = UserService.authUser(params)
+            let validation = ValidationService.serverValidation(authUserResponse, controller: self)
+            print("validation: \(validation)")
+        }
+        print(authUserResponse)
     }
 }

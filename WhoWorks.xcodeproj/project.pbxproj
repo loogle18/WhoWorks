@@ -14,6 +14,9 @@
 		A10ECE5F1E3FD42E0000A557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10ECE5D1E3FD42E0000A557 /* LaunchScreen.storyboard */; };
 		A11D7BF71E47866B00FD421E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D7BF61E47866B00FD421E /* User.swift */; };
 		A11D7BF91E47F13600FD421E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D7BF81E47F13600FD421E /* Users.swift */; };
+		A18A79351E4A5BA3001387F6 /* UICustomizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */; };
+		A18A79371E4A6BEE001387F6 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79361E4A6BEE001387F6 /* ValidationService.swift */; };
+		A18A79391E4A869D001387F6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79381E4A869D001387F6 /* RegisterViewController.swift */; };
 		A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F31E4760FB00CC502A /* UserService.swift */; };
 		A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F51E47653400CC502A /* LoginViewController.swift */; };
 		F84E2279ABA64AEB0BC31086 /* Pods_WhoWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95680E741246E80266ABAD73 /* Pods_WhoWorks.framework */; };
@@ -34,6 +37,13 @@
 			remoteGlobalIDString = F1F5BD220E4ABF5E877FEFDB09E711DB;
 			remoteInfo = "Pods-WhoWorks";
 		};
+		A18A79321E4A5B81001387F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A15F2C2D1E467867002FAF24 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0119CCB981D411807592F08A8CD88932;
+			remoteInfo = "Alamofire-Synchronous";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +59,9 @@
 		A11D7BF61E47866B00FD421E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A11D7BF81E47F13600FD421E /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		A15F2C2D1E467867002FAF24 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomizationService.swift; sourceTree = "<group>"; };
+		A18A79361E4A6BEE001387F6 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		A18A79381E4A869D001387F6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A1EFC2F31E4760FB00CC502A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A1EFC2F51E47653400CC502A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DC73D58DFD0E8435C062D093 /* Pods-WhoWorks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoWorks.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhoWorks/Pods-WhoWorks.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				A15F2C331E467867002FAF24 /* Alamofire.framework */,
+				A18A79331E4A5B81001387F6 /* Alamofire_Synchronous.framework */,
 				A15F2C351E467867002FAF24 /* Pods_WhoWorks.framework */,
 			);
 			name = Products;
@@ -131,6 +145,7 @@
 			children = (
 				A1EFC2F51E47653400CC502A /* LoginViewController.swift */,
 				A10ECE561E3FD42E0000A557 /* ViewController.swift */,
+				A18A79381E4A869D001387F6 /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -138,9 +153,19 @@
 		A17340FB1E476FEF00E9B8CB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A18A792E1E4A5B80001387F6 /* UI */,
 				A1EFC2F31E4760FB00CC502A /* UserService.swift */,
+				A18A79361E4A6BEE001387F6 /* ValidationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A18A792E1E4A5B80001387F6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		A6B2F2CA8CDA91B92B421BEE /* Pods */ = {
@@ -231,6 +256,13 @@
 			remoteRef = A15F2C341E467867002FAF24 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		A18A79331E4A5B81001387F6 /* Alamofire_Synchronous.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire_Synchronous.framework;
+			remoteRef = A18A79321E4A5B81001387F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -299,11 +331,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18A79391E4A869D001387F6 /* RegisterViewController.swift in Sources */,
+				A18A79351E4A5BA3001387F6 /* UICustomizationService.swift in Sources */,
 				A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */,
 				A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */,
 				A10ECE571E3FD42E0000A557 /* ViewController.swift in Sources */,
 				A11D7BF71E47866B00FD421E /* User.swift in Sources */,
 				A11D7BF91E47F13600FD421E /* Users.swift in Sources */,
+				A18A79371E4A6BEE001387F6 /* ValidationService.swift in Sources */,
 				A10ECE551E3FD42E0000A557 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
