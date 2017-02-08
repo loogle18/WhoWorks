@@ -37,7 +37,7 @@ struct ValidationService {
         }
     }
     
-    static func serverValidation(_ response: Any, controller: UIViewController) -> Bool {
+    static func authServerValidation(_ response: Any, controller: UIViewController) -> Bool {
         switch response {
             case let code as Int where code == 400:
                 showAlert(controller, title: "Bad request", message: "Something went wrong!")
@@ -52,6 +52,21 @@ struct ValidationService {
                 return true
             default:
                 return false
+        }
+    }
+    
+    static func postServerValidation(_ response: Any, controller: UIViewController) -> Bool {
+        switch response {
+        case let code as Int where code == 400:
+            showAlert(controller, title: "Bad request", message: "Something went wrong!")
+            return false
+        case let errors as [String]:
+            showAlert(controller, title: "Validation error", message: errors.joined(separator: "\n"))
+            return false
+        case is User:
+            return true
+        default:
+            return false
         }
     }
 }

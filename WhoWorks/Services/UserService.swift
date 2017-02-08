@@ -28,36 +28,45 @@ class UserService {
     }
     
     class func getUsers() -> [User] {
-        let response = Alamofire.request(self.indexUrl).responseJSON()
+        let response = Alamofire.request(indexUrl).responseJSON()
         
         var users = [User]()
         if let result = response.result.value {
             let data = result as! Array<Any>
             for item in data {
-                let user = self.createUserFromResponse(item as! Dictionary<String, Any>)
+                let user = createUserFromResponse(item as! Dictionary<String, Any>)
                 users.append(user)
             }
         }
         return users
     }
     
-    class func postUser(_ parameters: [String : Any]) {
+    class func createUser(_ parameters: [String : String]) -> Any {
         let params : [String : Any] = ["user" : parameters]
-        Alamofire.request(self.indexUrl, method: .post, parameters: params, encoding: URLEncoding.default, headers: [:]).responseJSON { response in
-                            print(response.result)
+        let response = Alamofire.request(indexUrl, method: .post, parameters: params).responseJSON()
+        print("value: \(response.result.value)")
+        var result : Any = 400
+        
+        if response.result.isSuccess {
+            if let resp = response.response, resp.statusCode == 200  {
+                result = createUserFromResponse(response.result.value as! Dictionary<String, Any>)
+            } else if let resp = response.response, resp.statusCode == 406 {
+                result = response.result.value as! Array<String>
+            }
         }
+        return result
     }
     
     class func authUser(_ parameters: [String]) -> Any {
         let params = ["user" : ["email" : parameters[0], "password" : parameters[1]]]
-        let response = Alamofire.request(self.authUrl, method: .get, parameters: params).responseJSON()
+        let response = Alamofire.request(authUrl, method: .get, parameters: params).responseJSON()
         var result : Any = 400
         
         if response.result.isSuccess {
-            result = self.createUserFromResponse(response.result.value as! Dictionary<String, Any>)
+            result = createUserFromResponse(response.result.value as! Dictionary<String, Any>)
             
-        } else if response.response != nil {
-            result = response.response!.statusCode
+        } else if let resp = response.response {
+            result = resp.statusCode
         }
         return result
     }

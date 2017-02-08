@@ -16,29 +16,31 @@ class LoginViewController: UIViewController {
     
     var users = [User]()
     var authUserResponse : Any = 400
+    var validation : Bool = false
+    let emailPlaceholder = "Email"
+    let passwordPlaceholder = "Password"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.users = UserService.getUsers()
-        UICustomizationService.defaultTextFieldUI(emailTextField)
-        UICustomizationService.defaultTextFieldUI(passwordTextField)
+        UICustomizationService.defaultTextFieldUI(emailTextField, placeholder: emailPlaceholder)
+        UICustomizationService.defaultTextFieldUI(passwordTextField, placeholder: passwordPlaceholder)
     }
     
     @IBAction func onFocusTextField(_ sender: UITextField) {
-        UICustomizationService.defaultTextFieldUI(sender)
+        let placeholder = sender == emailTextField ? emailPlaceholder : passwordPlaceholder
+        UICustomizationService.defaultTextFieldUI(sender, placeholder: placeholder)
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
-        let (email, password) = (emailTextField!, passwordTextField!)
-        let frontEmailValid = ValidationService.frontValidation(email, fieldName: "Email")
-        let frontPasswordValid = ValidationService.frontValidation(password, fieldName: "Password")
+        let frontEmailValid = ValidationService.frontValidation(emailTextField, fieldName: emailPlaceholder)
+        let frontPasswordValid = ValidationService.frontValidation(passwordTextField, fieldName: passwordPlaceholder)
         
         if frontEmailValid && frontPasswordValid {
-            let params = [email.text!, password.text!]
+            let params = [emailTextField.text!, passwordTextField.text!]
             self.authUserResponse = UserService.authUser(params)
-            let validation = ValidationService.serverValidation(authUserResponse, controller: self)
-            print("validation: \(validation)")
+            validation = ValidationService.authServerValidation(authUserResponse, controller: self)
         }
-        print(authUserResponse)
+        print(validation)
     }
 }

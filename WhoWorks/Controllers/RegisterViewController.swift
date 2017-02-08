@@ -9,32 +9,55 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-    @IBOutlet weak var userNameTextField : UITextField!
+    @IBOutlet weak var loginNameTextField : UITextField!
     @IBOutlet weak var emailTextField : UITextField!
     @IBOutlet weak var passwordTextField : UITextField!
     @IBOutlet weak var sumbitButton : UIButton!
     
     var createUserResponse : Any = 400
+    var validation : Bool = false
+    let loginNamePlaceholder = "Login name"
+    let emailPlaceholder = "Email"
+    let passwordPlaceholder = "Password"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UICustomizationService.defaultTextFieldUI(userNameTextField)
-        UICustomizationService.defaultTextFieldUI(emailTextField)
-        UICustomizationService.defaultTextFieldUI(passwordTextField)
+        UICustomizationService.defaultTextFieldUI(loginNameTextField, placeholder: loginNamePlaceholder)
+        UICustomizationService.defaultTextFieldUI(emailTextField, placeholder: emailPlaceholder)
+        UICustomizationService.defaultTextFieldUI(passwordTextField, placeholder: passwordPlaceholder)
     }
     
     @IBAction func onFocusTextField(_ sender: UITextField) {
-        UICustomizationService.defaultTextFieldUI(sender)
+        var placeholder : String!
+        switch sender {
+            case loginNameTextField:
+                placeholder = loginNamePlaceholder
+            case emailTextField:
+                placeholder = emailPlaceholder
+            case passwordTextField:
+                placeholder = passwordPlaceholder
+            default:
+                placeholder = sender.placeholder
+        }
+        UICustomizationService.defaultTextFieldUI(sender, placeholder: placeholder)
     }
     
     @IBAction func submitAction(_ sender: UIButton) {
-        let (userName, email, password) = (userNameTextField!, emailTextField!, passwordTextField!)
-        let frontUserNameValid = ValidationService.frontValidation(userName, fieldName: "User name")
-        let frontEmailValid = ValidationService.frontValidation(email, fieldName: "Email")
-        let frontPasswordValid = ValidationService.frontValidation(password, fieldName: "Password")
+        let frontLoginNameValid = ValidationService.frontValidation(loginNameTextField, fieldName: loginNamePlaceholder)
+        let frontEmailValid = ValidationService.frontValidation(emailTextField, fieldName: emailPlaceholder)
+        let frontPasswordValid = ValidationService.frontValidation(passwordTextField, fieldName: passwordPlaceholder)
         
-        if frontUserNameValid && frontEmailValid && frontPasswordValid {
-            
+        if frontLoginNameValid && frontEmailValid && frontPasswordValid {
+            let params = [
+                "login" : loginNameTextField.text!,
+                "email" : emailTextField.text!,
+                "password" : passwordTextField.text!,
+                "status_code" : "0"
+            ]
+            createUserResponse = UserService.createUser(params)
+            validation = ValidationService.postServerValidation(createUserResponse, controller: self)
         }
+        print(createUserResponse)
+        print(validation)
     }
 }

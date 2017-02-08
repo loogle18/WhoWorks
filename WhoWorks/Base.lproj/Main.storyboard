@@ -100,7 +100,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMn-6G-CZ0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xMn-6G-CZ0">
                                 <rect key="frame" x="16" y="218" width="343" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,10 +108,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <action selector="onFocusTextField:" destination="aSq-I2-0Qv" eventType="editingDidEnd" id="uFt-0J-GWe"/>
+                                    <action selector="onFocusTextField:" destination="aSq-I2-0Qv" eventType="editingDidBegin" id="zAN-ZM-wNA"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRa-q5-fDn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hRa-q5-fDn">
                                 <rect key="frame" x="16" y="295" width="343" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,10 +119,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="onFocusTextField:" destination="aSq-I2-0Qv" eventType="editingDidEnd" id="2bo-WY-4vf"/>
+                                    <action selector="onFocusTextField:" destination="aSq-I2-0Qv" eventType="editingDidBegin" id="7Q0-SO-34T"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZlU-tA-i9a">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Login name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZlU-tA-i9a">
                                 <rect key="frame" x="16" y="137" width="343" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -130,7 +130,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <action selector="onFocusTextField:" destination="aSq-I2-0Qv" eventType="editingDidEnd" id="BE0-5u-JEf"/>
+                                    <action selector="onFocusTextField:" destination="aSq-I2-0Qv" eventType="editingDidBegin" id="FNh-0h-XvZ"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l81-Om-y0p">
@@ -150,9 +150,9 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="xMn-6G-CZ0" id="QrC-P6-hmB"/>
+                        <outlet property="loginNameTextField" destination="ZlU-tA-i9a" id="1eo-Q9-PiU"/>
                         <outlet property="passwordTextField" destination="hRa-q5-fDn" id="FSb-8X-Urq"/>
                         <outlet property="sumbitButton" destination="l81-Om-y0p" id="jef-u5-Nky"/>
-                        <outlet property="userNameTextField" destination="ZlU-tA-i9a" id="SY9-pC-ST3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6NQ-DG-HrN" userLabel="First Responder" sceneMemberID="firstResponder"/>

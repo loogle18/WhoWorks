@@ -9,12 +9,12 @@
 import UIKit
 
 struct UICustomizationService {
-    static func defaultTextFieldUI(_ textField: UITextField) {
+    static func defaultTextFieldUI(_ textField: UITextField, placeholder: String) {
         let customGrayColor = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 1)
         textField.layer.cornerRadius = 4.0
         textField.layer.borderWidth = 1
         textField.layer.borderColor = customGrayColor.cgColor
-        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "",
+        textField.attributedPlaceholder = NSAttributedString(string: placeholder,
                                                              attributes:[NSForegroundColorAttributeName: customGrayColor])
     }
     
