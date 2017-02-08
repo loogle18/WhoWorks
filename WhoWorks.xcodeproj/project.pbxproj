@@ -13,7 +13,8 @@
 		A10ECE5C1E3FD42E0000A557 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A10ECE5B1E3FD42E0000A557 /* Assets.xcassets */; };
 		A10ECE5F1E3FD42E0000A557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10ECE5D1E3FD42E0000A557 /* LaunchScreen.storyboard */; };
 		A11D7BF71E47866B00FD421E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D7BF61E47866B00FD421E /* User.swift */; };
-		A11D7BF91E47F13600FD421E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D7BF81E47F13600FD421E /* Users.swift */; };
+		A1751C8E1E4BC215001E7B8D /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1751C8D1E4BC215001E7B8D /* UsersTableViewController.swift */; };
+		A1751C901E4BDBB1001E7B8D /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1751C8F1E4BDBB1001E7B8D /* Users.storyboard */; };
 		A18A79351E4A5BA3001387F6 /* UICustomizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */; };
 		A18A79371E4A6BEE001387F6 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79361E4A6BEE001387F6 /* ValidationService.swift */; };
 		A18A79391E4A869D001387F6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79381E4A869D001387F6 /* RegisterViewController.swift */; };
@@ -57,8 +58,9 @@
 		A10ECE5E1E3FD42E0000A557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A10ECE601E3FD42E0000A557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A11D7BF61E47866B00FD421E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A11D7BF81E47F13600FD421E /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		A15F2C2D1E467867002FAF24 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		A1751C8D1E4BC215001E7B8D /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		A1751C8F1E4BDBB1001E7B8D /* Users.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
 		A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomizationService.swift; sourceTree = "<group>"; };
 		A18A79361E4A6BEE001387F6 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		A18A79381E4A869D001387F6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				A10ECE5B1E3FD42E0000A557 /* Assets.xcassets */,
 				A10ECE5D1E3FD42E0000A557 /* LaunchScreen.storyboard */,
 				A10ECE601E3FD42E0000A557 /* Info.plist */,
+				A1751C8F1E4BDBB1001E7B8D /* Users.storyboard */,
 			);
 			path = WhoWorks;
 			sourceTree = "<group>";
@@ -125,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				A11D7BF61E47866B00FD421E /* User.swift */,
-				A11D7BF81E47F13600FD421E /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,6 +148,7 @@
 				A1EFC2F51E47653400CC502A /* LoginViewController.swift */,
 				A10ECE561E3FD42E0000A557 /* ViewController.swift */,
 				A18A79381E4A869D001387F6 /* RegisterViewController.swift */,
+				A1751C8D1E4BC215001E7B8D /* UsersTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10ECE5F1E3FD42E0000A557 /* LaunchScreen.storyboard in Resources */,
+				A1751C901E4BDBB1001E7B8D /* Users.storyboard in Resources */,
 				A10ECE5C1E3FD42E0000A557 /* Assets.xcassets in Resources */,
 				A10ECE5A1E3FD42E0000A557 /* Main.storyboard in Resources */,
 			);
@@ -337,8 +341,8 @@
 				A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */,
 				A10ECE571E3FD42E0000A557 /* ViewController.swift in Sources */,
 				A11D7BF71E47866B00FD421E /* User.swift in Sources */,
-				A11D7BF91E47F13600FD421E /* Users.swift in Sources */,
 				A18A79371E4A6BEE001387F6 /* ValidationService.swift in Sources */,
+				A1751C8E1E4BC215001E7B8D /* UsersTableViewController.swift in Sources */,
 				A10ECE551E3FD42E0000A557 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

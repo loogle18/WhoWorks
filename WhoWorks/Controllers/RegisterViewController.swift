@@ -16,6 +16,7 @@ class RegisterViewController: UIViewController {
     
     var createUserResponse : Any = 400
     var validation : Bool = false
+    var users = [User]()
     let loginNamePlaceholder = "Login name"
     let emailPlaceholder = "Email"
     let passwordPlaceholder = "Password"
@@ -57,7 +58,15 @@ class RegisterViewController: UIViewController {
             createUserResponse = UserService.createUser(params)
             validation = ValidationService.postServerValidation(createUserResponse, controller: self)
         }
-        print(createUserResponse)
-        print(validation)
+        
+        if validation {
+            self.users = UserService.getUsers()
+            let usersStoryboard = UIStoryboard(name: "Users", bundle: nil)
+            let controller = usersStoryboard.instantiateViewController(withIdentifier: "UsersView")
+            if let usersTVC = controller as? UsersTableViewController {
+                usersTVC.users = users
+            }
+            self.present(controller, animated: true, completion: nil)
+        }
     }
 }

@@ -14,9 +14,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField : UITextField!
     @IBOutlet weak var enterButton : UIButton!
     
-    var users = [User]()
     var authUserResponse : Any = 400
     var validation : Bool = false
+    var users = [User]()
     let emailPlaceholder = "Email"
     let passwordPlaceholder = "Password"
     
@@ -41,6 +41,15 @@ class LoginViewController: UIViewController {
             self.authUserResponse = UserService.authUser(params)
             validation = ValidationService.authServerValidation(authUserResponse, controller: self)
         }
-        print(validation)
+        
+        if validation {
+            self.users = UserService.getUsers()
+            let usersStoryboard = UIStoryboard(name: "Users", bundle: nil)
+            let controller = usersStoryboard.instantiateViewController(withIdentifier: "UsersView")
+            if let usersTVC = controller as? UsersTableViewController {
+                usersTVC.users = users
+            }
+            self.present(controller, animated: true, completion: nil)
+        }
     }
 }

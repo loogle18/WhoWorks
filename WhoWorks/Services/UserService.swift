@@ -12,11 +12,11 @@ import Alamofire_Synchronous
 
 class UserService {
     private class var indexUrl : String {
-        return "http://192.168.0.101:3000/api/v1/users"
+        return "http://192.168.0.103:3000/api/v1/users"
     }
     
     private class var authUrl : String {
-        return "http://192.168.0.101:3000/api/v1/auth"
+        return "http://192.168.0.103:3000/api/v1/auth"
     }
     
     private class func createUserFromResponse(_ response: Dictionary<String, Any>) -> User {
