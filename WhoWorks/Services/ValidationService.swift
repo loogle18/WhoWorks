@@ -9,7 +9,7 @@
 import UIKit
 
 struct ValidationService {
-    private static func checkPresence(_ textFieldText: String?) -> Bool {
+    static func checkPresence(_ textFieldText: String?) -> Bool {
         return !(textFieldText ?? "").isEmpty
     }
     

@@ -53,7 +53,7 @@ class RegisterViewController: UIViewController {
                 "login" : loginNameTextField.text!,
                 "email" : emailTextField.text!,
                 "password" : passwordTextField.text!,
-                "status_code" : "0"
+                "status_code" : "2"
             ]
             createUserResponse = UserService.createUser(params)
             validation = ValidationService.postServerValidation(createUserResponse, controller: self)

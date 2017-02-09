@@ -22,11 +22,12 @@ class UsersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserTableViewCell
         let user = users[indexPath.row]
         
-        cell.textLabel?.text = user.login
-        cell.detailTextLabel?.text = user.status
+        cell.statusCircle.backgroundColor = user.statusColor
+        cell.loginName.text = user.login
+        cell.status.text = user.status
         return cell
     }
     
