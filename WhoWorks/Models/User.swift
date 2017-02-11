@@ -79,11 +79,15 @@ class User {
         }
     }
     
-    class func getAllByStatusCode(_ statusCode: Int, from: [User] = [User]()) -> [User] {
+    class func findAllByStatusCode(_ statusCode: Int, from: [User]) -> [User] {
         return from.filter({ $0.statusCode == statusCode })
     }
     
-    class func getFirstByEmail(_ email: String, from: [User] = [User]()) -> User? {
+    class func findAllByLogin(_ login: String, from: [User]) -> [User] {
+        return from.filter({ $0.login.range(of: login) != nil })
+    }
+    
+    class func findByEmail(_ email: String, from: [User]) -> User? {
         return from.filter({ $0.email == email }).first
     }
 }

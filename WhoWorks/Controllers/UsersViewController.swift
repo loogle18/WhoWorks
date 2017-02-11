@@ -13,6 +13,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var offlineUsersCounter: UIButton!
     @IBOutlet weak var doNotDisturbUsersCounter: UIButton!
     @IBOutlet weak var activeUsersCounter: UIButton!
+    @IBOutlet weak var searchTextField: UITextField!
     
     var users = [User]()
     var allOriginUsers = [User]()
@@ -26,11 +27,12 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         allOriginUsers = users
         initStatusCodeCountersUI()
         initStatusCodeCounters()
+        UICustomizationService.defaultSearchTextFieldUI(searchTextField)
         refreshHandler()
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -45,6 +47,17 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowSelectedUser" {
+            let userVC = segue.destination as? UserViewController
+            guard let cell = sender as? UITableViewCell,
+                let indexPath = tableView.indexPath(for: cell) else {
+                    return
+            }
+            userVC?.user = users[indexPath.row]
+        }
+    }
+    
     @IBAction func showOnlyOfflineUsers(_ sender: UIButton) {
         filterUsersByStatusCode(sender, code: 0)
     }
@@ -57,10 +70,19 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         filterUsersByStatusCode(sender, code: 2)
     }
     
+    @IBAction func searchUsers(_ sender: UITextField) {
+        if let searchText = sender.text, ValidationService.checkPresence(searchText) {
+            users = User.findAllByLogin(searchText, from: allOriginUsers)
+        } else {
+            users = allOriginUsers
+        }
+        tableView.reloadData()
+    }
+    
     @objc private func initStatusCodeCountersUI() {
-        offlineUsersCounter.layer.borderColor = UIColor.gray.cgColor
-        doNotDisturbUsersCounter.layer.borderColor = UIColor.gray.cgColor
-        activeUsersCounter.layer.borderColor = UIColor.gray.cgColor
+        offlineUsersCounter.layer.borderColor = UIColor.white.cgColor
+        doNotDisturbUsersCounter.layer.borderColor = UIColor.white.cgColor
+        activeUsersCounter.layer.borderColor = UIColor.white.cgColor
         
         offlineUsersCounter.layer.cornerRadius = 12.0
         doNotDisturbUsersCounter.layer.cornerRadius = 12.0
@@ -68,9 +90,9 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @objc private func initStatusCodeCounters() {
-        offlineUsers = User.getAllByStatusCode(0, from: users)
-        doNotDisturbUsers = User.getAllByStatusCode(1, from: users)
-        activeUsers = User.getAllByStatusCode(2, from: users)
+        offlineUsers = User.findAllByStatusCode(0, from: users)
+        doNotDisturbUsers = User.findAllByStatusCode(1, from: users)
+        activeUsers = User.findAllByStatusCode(2, from: users)
         
         offlineUsersCounter.setTitle(String(offlineUsers.count), for: .normal)
         doNotDisturbUsersCounter.setTitle(String(doNotDisturbUsers.count), for: .normal)
@@ -98,7 +120,8 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @objc private func refreshHandler() {
         usersRefreshControl = UIRefreshControl()
-        usersRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        usersRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh",
+                                                                 attributes:[NSForegroundColorAttributeName: UIColor.white])
         usersRefreshControl.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
         tableView.addSubview(usersRefreshControl)
     }

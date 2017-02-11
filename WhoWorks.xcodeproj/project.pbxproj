@@ -19,6 +19,7 @@
 		A18A79351E4A5BA3001387F6 /* UICustomizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */; };
 		A18A79371E4A6BEE001387F6 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79361E4A6BEE001387F6 /* ValidationService.swift */; };
 		A18A79391E4A869D001387F6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79381E4A869D001387F6 /* RegisterViewController.swift */; };
+		A1E025231E4F3A67004AB7AA /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E025221E4F3A67004AB7AA /* UserViewController.swift */; };
 		A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F31E4760FB00CC502A /* UserService.swift */; };
 		A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F51E47653400CC502A /* LoginViewController.swift */; };
 		F84E2279ABA64AEB0BC31086 /* Pods_WhoWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95680E741246E80266ABAD73 /* Pods_WhoWorks.framework */; };
@@ -66,6 +67,7 @@
 		A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomizationService.swift; sourceTree = "<group>"; };
 		A18A79361E4A6BEE001387F6 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		A18A79381E4A869D001387F6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A1E025221E4F3A67004AB7AA /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A1EFC2F31E4760FB00CC502A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A1EFC2F51E47653400CC502A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DC73D58DFD0E8435C062D093 /* Pods-WhoWorks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoWorks.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhoWorks/Pods-WhoWorks.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				A18A79381E4A869D001387F6 /* RegisterViewController.swift */,
 				A13A5CCA1E4D0E76003E2F36 /* UserTableViewCell.swift */,
 				A117D3181E4E6D6D008A098D /* UsersViewController.swift */,
+				A1E025221E4F3A67004AB7AA /* UserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				A18A79391E4A869D001387F6 /* RegisterViewController.swift in Sources */,
 				A18A79351E4A5BA3001387F6 /* UICustomizationService.swift in Sources */,
 				A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */,
+				A1E025231E4F3A67004AB7AA /* UserViewController.swift in Sources */,
 				A117D3191E4E6D6D008A098D /* UsersViewController.swift in Sources */,
 				A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */,
 				A13A5CCB1E4D0E76003E2F36 /* UserTableViewCell.swift in Sources */,

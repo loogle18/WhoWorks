@@ -10,12 +10,12 @@ import UIKit
 
 struct UICustomizationService {
     static func defaultTextFieldUI(_ textField: UITextField, placeholder: String) {
-        let customGrayColor = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 1)
+        let customDarkColor = UIColor(red: 28/255, green: 25/255, blue: 33/255, alpha: 1)
         textField.layer.cornerRadius = 4.0
         textField.layer.borderWidth = 1
-        textField.layer.borderColor = customGrayColor.cgColor
+        textField.layer.borderColor = customDarkColor.cgColor
         textField.attributedPlaceholder = NSAttributedString(string: placeholder,
-                                                             attributes:[NSForegroundColorAttributeName: customGrayColor])
+                                                             attributes:[NSForegroundColorAttributeName: customDarkColor])
     }
     
     static func errorTextFieldUI(_ textField: UITextField, fieldName: String) {
@@ -24,6 +24,13 @@ struct UICustomizationService {
         textField.layer.borderColor = customRedColor.cgColor
         textField.attributedPlaceholder = NSAttributedString(string: "\(fieldName) is incorrect or empty",
                                                              attributes:[NSForegroundColorAttributeName: customRedColor])
+    }
+    
+    static func defaultSearchTextFieldUI(_ textField: UITextField) {
+        let customDarkColor = UIColor(red: 204/255, green: 204/255, blue: 216/255, alpha: 1)
+        textField.layer.cornerRadius = 4.0
+        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "Search...",
+                                                             attributes:[NSForegroundColorAttributeName: customDarkColor])
     }
 }
 
