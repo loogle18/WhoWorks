@@ -78,4 +78,12 @@ class User {
                 return UIColor(red: 34/255, green: 191/255, blue: 135/255, alpha: 1)
         }
     }
+    
+    class func getAllByStatusCode(_ statusCode: Int, from: [User] = [User]()) -> [User] {
+        return from.filter({ $0.statusCode == statusCode })
+    }
+    
+    class func getFirstByEmail(_ email: String, from: [User] = [User]()) -> User? {
+        return from.filter({ $0.email == email }).first
+    }
 }

@@ -44,7 +44,6 @@ class UserService {
     class func createUser(_ parameters: [String : String]) -> Any {
         let params : [String : Any] = ["user" : parameters]
         let response = Alamofire.request(indexUrl, method: .post, parameters: params).responseJSON()
-        print("value: \(response.result.value)")
         var result : Any = 400
         
         if response.result.isSuccess {

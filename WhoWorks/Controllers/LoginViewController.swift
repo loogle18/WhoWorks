@@ -46,8 +46,8 @@ class LoginViewController: UIViewController {
             self.users = UserService.getUsers()
             let usersStoryboard = UIStoryboard(name: "Users", bundle: nil)
             let controller = usersStoryboard.instantiateViewController(withIdentifier: "UsersView")
-            if let usersTVC = controller as? UsersTableViewController {
-                usersTVC.users = users
+            if let usersVC = controller as? UsersViewController {
+                usersVC.users = users
             }
             self.present(controller, animated: true, completion: nil)
         }
