@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OEO-h0-iNa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="TGQ-5s-tG4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OEO-h0-iNa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B42-OJ-u50">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UjD-yq-nsW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFN-sy-W6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-559" y="170"/>
+        </scene>
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="WhoWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="WhoWorks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -30,7 +46,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
                                 <connections>
                                     <action selector="onFocusTextField:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Ex4-Yq-sTQ"/>
                                 </connections>
@@ -43,7 +59,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="onFocusTextField:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Bgw-oS-Rbm"/>
                                 </connections>
@@ -106,7 +122,7 @@
                             <constraint firstItem="YiG-RB-6n6" firstAttribute="centerX" secondItem="fIu-IB-Dvk" secondAttribute="centerX" id="t35-fy-1tk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kYF-4B-QNf"/>
+                    <navigationItem key="navigationItem" title="Login" id="kYF-4B-QNf"/>
                     <connections>
                         <outlet property="emailTextField" destination="c2Y-th-O99" id="vXv-4P-1r6"/>
                         <outlet property="enterButton" destination="TM0-gq-3hh" id="C8v-xc-44D"/>
@@ -117,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="212" y="169.56521739130437"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Register-->
         <scene sceneID="3Z9-Lv-J4z">
             <objects>
-                <viewController id="aSq-I2-0Qv" customClass="RegisterViewController" customModule="WhoWorks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Register" id="aSq-I2-0Qv" customClass="RegisterViewController" customModule="WhoWorks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d1g-WD-gc1"/>
                         <viewControllerLayoutGuide type="bottom" id="8I7-Ko-lSX"/>
@@ -130,37 +146,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xMn-6G-CZ0">
-                                <rect key="frame" x="16" y="213" width="343" height="48"/>
+                                <rect key="frame" x="16" y="257" width="343" height="48"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.2666666667" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="R3t-qu-FBJ"/>
                                 </constraints>
                                 <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
                                 <connections>
                                     <action selector="onFocusTextField:" destination="aSq-I2-0Qv" eventType="editingDidBegin" id="zAN-ZM-wNA"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hRa-q5-fDn">
-                                <rect key="frame" x="16" y="289" width="343" height="48"/>
+                                <rect key="frame" x="16" y="333" width="343" height="4"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.2666666667" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="onFocusTextField:" destination="aSq-I2-0Qv" eventType="editingDidBegin" id="7Q0-SO-34T"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Login name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZlU-tA-i9a">
-                                <rect key="frame" x="16" y="137" width="343" height="48"/>
+                                <rect key="frame" x="16" y="181" width="343" height="48"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.2666666667" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="39I-lo-WDK"/>
                                 </constraints>
                                 <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
                                 <connections>
                                     <action selector="onFocusTextField:" destination="aSq-I2-0Qv" eventType="editingDidBegin" id="FNh-0h-XvZ"/>
                                 </connections>

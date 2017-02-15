@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginNameTextField : UITextField!
     @IBOutlet weak var emailTextField : UITextField!
     @IBOutlet weak var passwordTextField : UITextField!
@@ -26,6 +26,21 @@ class RegisterViewController: UIViewController {
         UICustomizationService.defaultTextFieldUI(loginNameTextField, placeholder: loginNamePlaceholder)
         UICustomizationService.defaultTextFieldUI(emailTextField, placeholder: emailPlaceholder)
         UICustomizationService.defaultTextFieldUI(passwordTextField, placeholder: passwordPlaceholder)
+        loginNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {        
+        switch textField {
+            case loginNameTextField:
+                emailTextField.becomeFirstResponder()
+            case emailTextField:
+                passwordTextField.becomeFirstResponder()
+            default:
+                passwordTextField.resignFirstResponder()
+        }
+        return true
     }
     
     @IBAction func onFocusTextField(_ sender: UITextField) {
@@ -55,18 +70,22 @@ class RegisterViewController: UIViewController {
                 "password" : passwordTextField.text!,
                 "status_code" : "2"
             ]
-            createUserResponse = UserService.createUser(params)
+            self.createUserResponse = UserService.createUser(params)
             validation = ValidationService.postServerValidation(createUserResponse, controller: self)
         }
         
         if validation {
-            self.users = UserService.getUsers()
             let usersStoryboard = UIStoryboard(name: "Users", bundle: nil)
-            let controller = usersStoryboard.instantiateViewController(withIdentifier: "UsersView")
-            if let usersVC = controller as? UsersViewController {
-                usersVC.users = users
-            }
-            self.present(controller, animated: true, completion: nil)
+            let SWRevealVC = usersStoryboard.instantiateViewController(withIdentifier: "SWRevealVC") as! SWRevealViewController
+            let userVC = usersStoryboard.instantiateViewController(withIdentifier: "UsersView") as! UsersViewController
+            let userMenuVC = usersStoryboard.instantiateViewController(withIdentifier: "UserMenuView") as! CurrentUserMenuViewController
+            
+            SWRevealVC.frontViewController = userVC
+            SWRevealVC.rearViewController = userMenuVC
+            userVC.users = UserService.getUsers()
+            userMenuVC.currentUser = createUserResponse as? User
+            
+            self.present(SWRevealVC, animated: true, completion: nil)
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1048A8E1E54DC0B00136D74 /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1048A8D1E54DC0B00136D74 /* Users.storyboard */; };
 		A10ECE551E3FD42E0000A557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10ECE541E3FD42E0000A557 /* AppDelegate.swift */; };
 		A10ECE571E3FD42E0000A557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10ECE561E3FD42E0000A557 /* ViewController.swift */; };
 		A10ECE5A1E3FD42E0000A557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10ECE581E3FD42E0000A557 /* Main.storyboard */; };
@@ -15,10 +16,11 @@
 		A117D3191E4E6D6D008A098D /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117D3181E4E6D6D008A098D /* UsersViewController.swift */; };
 		A11D7BF71E47866B00FD421E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D7BF61E47866B00FD421E /* User.swift */; };
 		A13A5CCB1E4D0E76003E2F36 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A5CCA1E4D0E76003E2F36 /* UserTableViewCell.swift */; };
-		A1751C901E4BDBB1001E7B8D /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1751C8F1E4BDBB1001E7B8D /* Users.storyboard */; };
 		A18A79351E4A5BA3001387F6 /* UICustomizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */; };
 		A18A79371E4A6BEE001387F6 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79361E4A6BEE001387F6 /* ValidationService.swift */; };
 		A18A79391E4A869D001387F6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79381E4A869D001387F6 /* RegisterViewController.swift */; };
+		A18E62C91E53C0600078CA5F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18E62C81E53C0600078CA5F /* SWRevealViewController.m */; };
+		A18E62CE1E53E4950078CA5F /* CurrentUserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18E62CD1E53E4950078CA5F /* CurrentUserMenuViewController.swift */; };
 		A1E025231E4F3A67004AB7AA /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E025221E4F3A67004AB7AA /* UserViewController.swift */; };
 		A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F31E4760FB00CC502A /* UserService.swift */; };
 		A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F51E47653400CC502A /* LoginViewController.swift */; };
@@ -52,6 +54,7 @@
 /* Begin PBXFileReference section */
 		1BF8D133A5BB0FD40D718882 /* Pods-WhoWorks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoWorks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhoWorks/Pods-WhoWorks.debug.xcconfig"; sourceTree = "<group>"; };
 		95680E741246E80266ABAD73 /* Pods_WhoWorks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhoWorks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1048A8D1E54DC0B00136D74 /* Users.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
 		A10ECE511E3FD42E0000A557 /* WhoWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10ECE541E3FD42E0000A557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A10ECE561E3FD42E0000A557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +66,13 @@
 		A11D7BF61E47866B00FD421E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A13A5CCA1E4D0E76003E2F36 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		A15F2C2D1E467867002FAF24 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
-		A1751C8F1E4BDBB1001E7B8D /* Users.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
 		A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomizationService.swift; sourceTree = "<group>"; };
 		A18A79361E4A6BEE001387F6 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		A18A79381E4A869D001387F6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A18E62C31E53C05F0078CA5F /* WhoWorks-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhoWorks-Bridging-Header.h"; sourceTree = "<group>"; };
+		A18E62C71E53C0600078CA5F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		A18E62C81E53C0600078CA5F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		A18E62CD1E53E4950078CA5F /* CurrentUserMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserMenuViewController.swift; sourceTree = "<group>"; };
 		A1E025221E4F3A67004AB7AA /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A1EFC2F31E4760FB00CC502A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A1EFC2F51E47653400CC502A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -122,8 +128,8 @@
 				A10ECE581E3FD42E0000A557 /* Main.storyboard */,
 				A10ECE5B1E3FD42E0000A557 /* Assets.xcassets */,
 				A10ECE5D1E3FD42E0000A557 /* LaunchScreen.storyboard */,
+				A1048A8D1E54DC0B00136D74 /* Users.storyboard */,
 				A10ECE601E3FD42E0000A557 /* Info.plist */,
-				A1751C8F1E4BDBB1001E7B8D /* Users.storyboard */,
 			);
 			path = WhoWorks;
 			sourceTree = "<group>";
@@ -149,12 +155,16 @@
 		A17340FA1E476FCC00E9B8CB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A18E62C71E53C0600078CA5F /* SWRevealViewController.h */,
+				A18E62C81E53C0600078CA5F /* SWRevealViewController.m */,
 				A1EFC2F51E47653400CC502A /* LoginViewController.swift */,
 				A10ECE561E3FD42E0000A557 /* ViewController.swift */,
 				A18A79381E4A869D001387F6 /* RegisterViewController.swift */,
 				A13A5CCA1E4D0E76003E2F36 /* UserTableViewCell.swift */,
 				A117D3181E4E6D6D008A098D /* UsersViewController.swift */,
 				A1E025221E4F3A67004AB7AA /* UserViewController.swift */,
+				A18E62C31E53C05F0078CA5F /* WhoWorks-Bridging-Header.h */,
+				A18E62CD1E53E4950078CA5F /* CurrentUserMenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +232,7 @@
 					A10ECE501E3FD42E0000A557 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = JF539DV76S;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -280,7 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10ECE5F1E3FD42E0000A557 /* LaunchScreen.storyboard in Resources */,
-				A1751C901E4BDBB1001E7B8D /* Users.storyboard in Resources */,
+				A1048A8E1E54DC0B00136D74 /* Users.storyboard in Resources */,
 				A10ECE5C1E3FD42E0000A557 /* Assets.xcassets in Resources */,
 				A10ECE5A1E3FD42E0000A557 /* Main.storyboard in Resources */,
 			);
@@ -347,11 +358,13 @@
 				A1E025231E4F3A67004AB7AA /* UserViewController.swift in Sources */,
 				A117D3191E4E6D6D008A098D /* UsersViewController.swift in Sources */,
 				A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */,
+				A18E62CE1E53E4950078CA5F /* CurrentUserMenuViewController.swift in Sources */,
 				A13A5CCB1E4D0E76003E2F36 /* UserTableViewCell.swift in Sources */,
 				A10ECE571E3FD42E0000A557 /* ViewController.swift in Sources */,
 				A11D7BF71E47866B00FD421E /* User.swift in Sources */,
 				A18A79371E4A6BEE001387F6 /* ValidationService.swift in Sources */,
 				A10ECE551E3FD42E0000A557 /* AppDelegate.swift in Sources */,
+				A18E62C91E53C0600078CA5F /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,12 +486,15 @@
 			baseConfigurationReference = 1BF8D133A5BB0FD40D718882 /* Pods-WhoWorks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = JF539DV76S;
 				INFOPLIST_FILE = WhoWorks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.loogle18.WhoWorks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WhoWorks/Controllers/WhoWorks-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -488,12 +504,14 @@
 			baseConfigurationReference = DC73D58DFD0E8435C062D093 /* Pods-WhoWorks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = JF539DV76S;
 				INFOPLIST_FILE = WhoWorks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.loogle18.WhoWorks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WhoWorks/Controllers/WhoWorks-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

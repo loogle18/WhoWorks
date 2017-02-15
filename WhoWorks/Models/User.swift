@@ -10,22 +10,26 @@ import UIKit
 import Foundation
 
 class User {
-    var id : Int
-    var login, email : String
-    var status, fullName, avatarUrl : String?
+    var id: Int
+    var login, email: String
+    var status, fullName, avatarUrl: String?
     var statusCode = 2 {
         willSet {
             statusColor = getStatusColorByCode(newValue)
         }
     }
     
-    var statusColor : UIColor {
+    var statusColor: UIColor {
         get {
             return getStatusColorByCode(statusCode)
         }
         set {
            
         }
+    }
+    
+    var avatar: UIImage! {
+        return UIImage(named: "trooper.jpg")
     }
     
     init(id: Int, login: String, email: String) {

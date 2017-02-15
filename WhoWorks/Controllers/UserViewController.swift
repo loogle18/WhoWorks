@@ -12,6 +12,7 @@ class UserViewController: UIViewController {
     @IBOutlet weak var userLogin: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userStatus: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
     
     var user: User?
 
@@ -20,6 +21,7 @@ class UserViewController: UIViewController {
         userLogin.text = user?.login
         userEmail.text = user?.email
         userStatus.text = user?.status
+        avatarImageView.image = user?.avatar
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {

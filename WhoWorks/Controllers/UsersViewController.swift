@@ -8,12 +8,13 @@
 
 import UIKit
 
-class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var offlineUsersCounter: UIButton!
     @IBOutlet weak var doNotDisturbUsersCounter: UIButton!
     @IBOutlet weak var activeUsersCounter: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var menuButton: UIButton!
     
     var users = [User]()
     var allOriginUsers = [User]()
@@ -24,11 +25,14 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.users = UserService.getUsers()
         allOriginUsers = users
+        initRevealVCLogic()
         initStatusCodeCountersUI()
         initStatusCodeCounters()
         UICustomizationService.defaultSearchTextFieldUI(searchTextField)
         refreshHandler()
+        searchTextField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -41,10 +45,20 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserTableViewCell
         let user = users[indexPath.row]
         
-        cell.statusCircle.backgroundColor = user.statusColor
+        cell.circleColor = user.statusColor
         cell.loginName.text = user.login
         cell.status.text = user.status
+        cell.avatarImageView.image = user.avatar
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,6 +91,13 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
             users = allOriginUsers
         }
         tableView.reloadData()
+    }
+    
+    @objc func initRevealVCLogic() {
+        if let revealVC = revealViewController() {
+            menuButton.addTarget(revealVC, action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchDown)
+            self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
+        }
     }
     
     @objc private func initStatusCodeCountersUI() {
