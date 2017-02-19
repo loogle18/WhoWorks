@@ -40,6 +40,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // TODO: Move to viewDidAppear and add spiner
         users = UserService.getUsers()
         allOriginUsers = users
+        initStatusCodeCounters()
         tableView.reloadData()
     }
         
