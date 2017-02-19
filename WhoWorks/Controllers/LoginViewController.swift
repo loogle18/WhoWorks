@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import SWRevealViewController
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!

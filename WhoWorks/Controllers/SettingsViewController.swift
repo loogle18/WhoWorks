@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var menuBarButton: UIBarButtonItem!

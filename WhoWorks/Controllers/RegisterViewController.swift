@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginNameTextField: UITextField!

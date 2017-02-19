@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var menuBarButton: UIBarButtonItem!

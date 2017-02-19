@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class CurrentUserMenuViewController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!

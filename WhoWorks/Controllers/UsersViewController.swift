@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
