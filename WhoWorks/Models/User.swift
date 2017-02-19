@@ -10,10 +10,10 @@ import UIKit
 import Foundation
 
 class User {
-    var id: Int
+    var id: UInt16
     var login, email: String
     var status, fullName, avatarUrl: String?
-    var statusCode = 2 {
+    var statusCode: UInt8 = 2 {
         willSet {
             statusColor = getStatusColorByCode(newValue)
         }
@@ -32,7 +32,7 @@ class User {
         return UIImage(named: "trooper.jpg")
     }
     
-    init(id: Int, login: String, email: String) {
+    init(id: UInt16, login: String, email: String) {
         self.id = id
         self.login = login
         self.email = email
@@ -43,7 +43,7 @@ class User {
         self.status = getStatusByCode(statusCode)
     }
     
-    init(id: Int, login: String, email: String, statusCode: Int, status: String?, fullName: String?, avatarUrl: String?) {
+    init(id: UInt16, login: String, email: String, statusCode: UInt8, status: String?, fullName: String?, avatarUrl: String?) {
         self.id = id
         self.login = login
         self.email = email
@@ -57,7 +57,7 @@ class User {
         }
     }
     
-    @objc private func getStatusByCode(_ statusCode: Int) -> String {
+    @objc private func getStatusByCode(_ statusCode: UInt8) -> String {
         switch statusCode {
             case 0:
                 return "Offline"
@@ -70,7 +70,7 @@ class User {
         }
     }
     
-    @objc private func getStatusColorByCode(_ statusCode: Int) -> UIColor {
+    @objc private func getStatusColorByCode(_ statusCode: UInt8) -> UIColor {
         switch statusCode {
             case 0:
                 return UIColor(red: 255/255, green: 104/255, blue: 104/255, alpha: 1)
@@ -83,7 +83,7 @@ class User {
         }
     }
     
-    class func findAllByStatusCode(_ statusCode: Int, from: [User]) -> [User] {
+    class func findAllByStatusCode(_ statusCode: UInt8, from: [User]) -> [User] {
         return from.filter({ $0.statusCode == statusCode })
     }
     

@@ -14,7 +14,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var doNotDisturbUsersCounter: UIButton!
     @IBOutlet weak var activeUsersCounter: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var menuBarButton: UIBarButtonItem!
     
     var users = [User]()
     var allOriginUsers = [User]()
@@ -25,7 +25,6 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.users = UserService.getUsers()
         allOriginUsers = users
         initRevealVCLogic()
         initStatusCodeCountersUI()
@@ -35,6 +34,13 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         searchTextField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // TODO: Move to viewDidAppear and add spiner
+        users = UserService.getUsers()
+        allOriginUsers = users
+        tableView.reloadData()
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,9 +99,10 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.reloadData()
     }
     
-    @objc func initRevealVCLogic() {
+    @objc private func initRevealVCLogic() {
         if let revealVC = revealViewController() {
-            menuButton.addTarget(revealVC, action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchDown)
+            menuBarButton.target = revealVC
+            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
@@ -120,7 +127,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         activeUsersCounter.setTitle(String(activeUsers.count), for: .normal)
     }
     
-    @objc func filterUsersByStatusCode(_ sender: UIButton, code: Int) {
+    @objc private func filterUsersByStatusCode(_ sender: UIButton, code: Int) {
         let usersDictionary = [offlineUsers, doNotDisturbUsers, activeUsers]
         if sender.layer.borderWidth != 0 {
             resetHighlightedStyleForCounters()

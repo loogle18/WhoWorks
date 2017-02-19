@@ -10,12 +10,12 @@ import UIKit
 import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var emailTextField : UITextField!
-    @IBOutlet weak var passwordTextField : UITextField!
-    @IBOutlet weak var enterButton : UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var enterButton: UIButton!
     
-    var authUserResponse : Any = 400
-    var validation : Bool = false
+    var authUserResponse: Any = 400
+    var validation: Bool = false
     let emailPlaceholder = "Email"
     let passwordPlaceholder = "Password"
     

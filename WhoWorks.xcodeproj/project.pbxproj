@@ -24,6 +24,8 @@
 		A1E025231E4F3A67004AB7AA /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E025221E4F3A67004AB7AA /* UserViewController.swift */; };
 		A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F31E4760FB00CC502A /* UserService.swift */; };
 		A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F51E47653400CC502A /* LoginViewController.swift */; };
+		A1FE94DF1E59F92600B6B1CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE94DE1E59F92600B6B1CE /* ProfileViewController.swift */; };
+		A1FE94E41E5A004600B6B1CE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE94E31E5A004600B6B1CE /* SettingsViewController.swift */; };
 		F84E2279ABA64AEB0BC31086 /* Pods_WhoWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95680E741246E80266ABAD73 /* Pods_WhoWorks.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		A1E025221E4F3A67004AB7AA /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A1EFC2F31E4760FB00CC502A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A1EFC2F51E47653400CC502A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A1FE94DE1E59F92600B6B1CE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A1FE94E31E5A004600B6B1CE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DC73D58DFD0E8435C062D093 /* Pods-WhoWorks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoWorks.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhoWorks/Pods-WhoWorks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +169,8 @@
 				A1E025221E4F3A67004AB7AA /* UserViewController.swift */,
 				A18E62C31E53C05F0078CA5F /* WhoWorks-Bridging-Header.h */,
 				A18E62CD1E53E4950078CA5F /* CurrentUserMenuViewController.swift */,
+				A1FE94DE1E59F92600B6B1CE /* ProfileViewController.swift */,
+				A1FE94E31E5A004600B6B1CE /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -356,9 +362,11 @@
 				A18A79351E4A5BA3001387F6 /* UICustomizationService.swift in Sources */,
 				A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */,
 				A1E025231E4F3A67004AB7AA /* UserViewController.swift in Sources */,
+				A1FE94DF1E59F92600B6B1CE /* ProfileViewController.swift in Sources */,
 				A117D3191E4E6D6D008A098D /* UsersViewController.swift in Sources */,
 				A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */,
 				A18E62CE1E53E4950078CA5F /* CurrentUserMenuViewController.swift in Sources */,
+				A1FE94E41E5A004600B6B1CE /* SettingsViewController.swift in Sources */,
 				A13A5CCB1E4D0E76003E2F36 /* UserTableViewCell.swift in Sources */,
 				A10ECE571E3FD42E0000A557 /* ViewController.swift in Sources */,
 				A11D7BF71E47866B00FD421E /* User.swift in Sources */,

@@ -9,13 +9,13 @@
 import UIKit
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var loginNameTextField : UITextField!
-    @IBOutlet weak var emailTextField : UITextField!
-    @IBOutlet weak var passwordTextField : UITextField!
-    @IBOutlet weak var sumbitButton : UIButton!
+    @IBOutlet weak var loginNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var sumbitButton: UIButton!
     
-    var createUserResponse : Any = 400
-    var validation : Bool = false
+    var createUserResponse: Any = 400
+    var validation: Bool = false
     var users = [User]()
     let loginNamePlaceholder = "Login name"
     let emailPlaceholder = "Email"
