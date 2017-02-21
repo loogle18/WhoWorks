@@ -13,12 +13,6 @@ struct ValidationService {
         return !(textFieldText ?? "").isEmpty
     }
     
-    private static func showAlert(_ controller: UIViewController, title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
-        controller.present(alert, animated: true, completion: nil)
-    }
-    
     static func frontValidation(_ textField: UITextField, fieldName: String) -> Bool {
         let textFieldText : String? = textField.text
         if checkPresence(textFieldText) {
@@ -68,5 +62,11 @@ struct ValidationService {
         default:
             return false
         }
+    }
+    
+    private static func showAlert(_ controller: UIViewController, title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+        controller.present(alert, animated: true, completion: nil)
     }
 }

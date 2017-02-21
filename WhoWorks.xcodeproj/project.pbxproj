@@ -21,6 +21,7 @@
 		A18A79391E4A869D001387F6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79381E4A869D001387F6 /* RegisterViewController.swift */; };
 		A18E62CE1E53E4950078CA5F /* CurrentUserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18E62CD1E53E4950078CA5F /* CurrentUserMenuViewController.swift */; };
 		A1E025231E4F3A67004AB7AA /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E025221E4F3A67004AB7AA /* UserViewController.swift */; };
+		A1E601CE1E5BA5510090AD38 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E601CD1E5BA5510090AD38 /* UIColor.swift */; };
 		A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F31E4760FB00CC502A /* UserService.swift */; };
 		A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F51E47653400CC502A /* LoginViewController.swift */; };
 		A1FE94DF1E59F92600B6B1CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE94DE1E59F92600B6B1CE /* ProfileViewController.swift */; };
@@ -79,6 +80,7 @@
 		A18A79381E4A869D001387F6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A18E62CD1E53E4950078CA5F /* CurrentUserMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserMenuViewController.swift; sourceTree = "<group>"; };
 		A1E025221E4F3A67004AB7AA /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		A1E601CD1E5BA5510090AD38 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A1EFC2F31E4760FB00CC502A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A1EFC2F51E47653400CC502A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1FE94DE1E59F92600B6B1CE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		A10ECE531E3FD42E0000A557 /* WhoWorks */ = {
 			isa = PBXGroup;
 			children = (
+				A1E601CC1E5BA4FB0090AD38 /* Extensions */,
 				A11D7BF31E47865A00FD421E /* Models */,
 				A17340FB1E476FEF00E9B8CB /* Services */,
 				A17340FA1E476FCC00E9B8CB /* Controllers */,
@@ -192,6 +195,14 @@
 				A18A79341E4A5BA3001387F6 /* UICustomizationService.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A1E601CC1E5BA4FB0090AD38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1E601CD1E5BA5510090AD38 /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A6B2F2CA8CDA91B92B421BEE /* Pods */ = {
@@ -370,6 +381,7 @@
 				A18A79351E4A5BA3001387F6 /* UICustomizationService.swift in Sources */,
 				A1EFC2F61E47653400CC502A /* LoginViewController.swift in Sources */,
 				A1E025231E4F3A67004AB7AA /* UserViewController.swift in Sources */,
+				A1E601CE1E5BA5510090AD38 /* UIColor.swift in Sources */,
 				A1FE94DF1E59F92600B6B1CE /* ProfileViewController.swift in Sources */,
 				A117D3191E4E6D6D008A098D /* UsersViewController.swift in Sources */,
 				A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */,

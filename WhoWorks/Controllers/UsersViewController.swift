@@ -27,10 +27,10 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         allOriginUsers = users
+        UICustomizationService.searchTextField(searchTextField)
         initRevealVCLogic()
         initStatusCodeCountersUI()
         initStatusCodeCounters()
-        UICustomizationService.defaultSearchTextFieldUI(searchTextField)
         refreshHandler()
         searchTextField.delegate = self
         tableView.delegate = self
@@ -151,7 +151,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @objc private func refreshHandler() {
         usersRefreshControl = UIRefreshControl()
         usersRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh",
-                                                                 attributes:[NSForegroundColorAttributeName: UIColor.white])
+                                                                 attributes:[NSForegroundColorAttributeName: UIColor.customLightGray()])
         usersRefreshControl.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
         tableView.addSubview(usersRefreshControl)
     }

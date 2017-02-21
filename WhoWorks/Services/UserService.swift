@@ -12,7 +12,7 @@ import Alamofire_Synchronous
 
 class UserService {
     private class var indexUrl : String {
-        return "http://localahost:3000/api/v1/users"
+        return "http://localhost:3000/api/v1/users"
     }
     
     private class var authUrl : String {
@@ -22,7 +22,7 @@ class UserService {
     private class func createUserFromResponse(_ response: Dictionary<String, Any>) -> User {
         let user = User(
             id: response["id"] as! UInt16, login: response["login"] as! String, email: response["email"] as! String,
-            statusCode: response["status_code"] as! UInt8, status: response["status"] as? String, fullName: response["full_name"] as? String, avatarUrl: response["avatar_url"] as? String
+            statusCode: response["status_code"] as! UInt8, status: response["status"] as? String, fullName: response["full_name"] as? String, avatarUrl: response["avatar"] as? String
         )
         return user
     }

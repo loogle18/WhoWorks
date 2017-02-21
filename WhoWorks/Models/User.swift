@@ -73,13 +73,13 @@ class User {
     @objc private func getStatusColorByCode(_ statusCode: UInt8) -> UIColor {
         switch statusCode {
             case 0:
-                return UIColor(red: 255/255, green: 104/255, blue: 104/255, alpha: 1)
+                return UIColor.customRed()
             case 1:
-                return UIColor(red: 255/255, green: 190/255, blue: 0/255, alpha: 1)
+                return UIColor.customYellow()
             case 2:
-                return UIColor(red: 34/255, green: 191/255, blue: 135/255, alpha: 1)
+                return UIColor.customGreen()
             default:
-                return UIColor(red: 34/255, green: 191/255, blue: 135/255, alpha: 1)
+                return UIColor.customGreen()
         }
     }
     

@@ -29,7 +29,7 @@ class UserTableViewCell: UITableViewCell {
     
     @objc private func changeSelectedColor() {
         let cellBGView = UIView()
-        cellBGView.backgroundColor = UIColor(red: 28/255, green: 25/255, blue: 33/255, alpha: 1)
+        cellBGView.backgroundColor = UIColor.customWhite()
         self.selectedBackgroundView = cellBGView
     }
 }

@@ -54,8 +54,7 @@ class CurrentUserMenuViewController: UIViewController {
         if let revealVC = revealViewController() {
             removeActionTargetsAndStyles(revealVC, buttons: profileButton, settingsButton, teamListButton)
             let buttonOfCurrentVC = buttonToCurrentVC(revealVC.frontViewController)
-            buttonOfCurrentVC.backgroundColor = UIColor(red: 65/255, green: 68/255, blue: 80/255, alpha: 1.0)
-            buttonOfCurrentVC.setTitleColor(UIColor(red: 204/255, green: 204/255, blue: 216/255, alpha: 1.0), for: .normal)
+            buttonOfCurrentVC.backgroundColor = UIColor.customRed()
         }
     }
     
@@ -84,8 +83,8 @@ class CurrentUserMenuViewController: UIViewController {
     private func removeActionTargetsAndStyles(_ selector: UIViewController, buttons: UIButton...) {
         for button in buttons {
             button.removeTarget(selector, action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-            button.backgroundColor = UIColor(red: 204/255, green: 204/255, blue: 216/255, alpha: 1.0)
-            button.setTitleColor(UIColor(red: 65/255, green: 68/255, blue: 80/255, alpha: 1.0), for: .normal)
+            button.backgroundColor = UIColor.customBlack()
+            button.setTitleColor(UIColor.white, for: .normal)
         }
     }
 }
