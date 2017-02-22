@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     var authUserResponse: Any = 400
     var validation: Bool = false
@@ -22,6 +23,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        enterButton.layer.cornerRadius = 4.0
+        registerButton.layer.cornerRadius = 4.0
         UICustomizationService.defaultTextFieldUI(emailTextField, placeholder: emailPlaceholder)
         UICustomizationService.defaultTextFieldUI(passwordTextField, placeholder: passwordPlaceholder)
         emailTextField.delegate = self
@@ -61,6 +64,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             SWRevealVC.frontViewController = userVC
             SWRevealVC.rearViewController = userMenuVC
             userVC.users = UserService.getUsers()
+            userVC.currentUser = authUserResponse as? User
             userMenuVC.currentUser = authUserResponse as? User
             
             self.present(SWRevealVC, animated: true, completion: nil)

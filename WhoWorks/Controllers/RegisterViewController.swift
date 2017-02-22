@@ -24,6 +24,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sumbitButton.layer.cornerRadius = 4.0
         UICustomizationService.defaultTextFieldUI(loginNameTextField, placeholder: loginNamePlaceholder)
         UICustomizationService.defaultTextFieldUI(emailTextField, placeholder: emailPlaceholder)
         UICustomizationService.defaultTextFieldUI(passwordTextField, placeholder: passwordPlaceholder)

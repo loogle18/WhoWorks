@@ -9,15 +9,17 @@
 import UIKit
 import SWRevealViewController
 
-class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var offlineUsersCounter: UIButton!
     @IBOutlet weak var doNotDisturbUsersCounter: UIButton!
     @IBOutlet weak var activeUsersCounter: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
+    @IBOutlet weak var changeStatusButton: UIButton!
     
     var users = [User]()
+    var currentUser: User?
     var allOriginUsers = [User]()
     var usersRefreshControl: UIRefreshControl!
     var offlineUsers = [User]()
@@ -28,6 +30,8 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         allOriginUsers = users
         UICustomizationService.searchTextField(searchTextField)
+        changeStatusButton.layer.cornerRadius = 4.0
+        changeStatusButton.layer.backgroundColor = currentUser?.statusColor.cgColor
         initRevealVCLogic()
         initStatusCodeCountersUI()
         initStatusCodeCounters()
@@ -77,7 +81,19 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     return
             }
             userVC?.user = users[indexPath.row]
+        } else if segue.identifier == "showStatuses" {
+            let vc = segue.destination as! StatusesViewController
+            if let statusesPVC = vc.popoverPresentationController {
+                statusesPVC.delegate = self
+                vc.currentStatusCode = currentUser?.statusCode ?? 2
+                vc.preferredContentSize = CGSize(width: 60, height: 180)
+                statusesPVC.sourceRect = CGRect(x: 30.0, y: 35.0, width: 0.0, height: 0.0)
+            }
         }
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
     @IBAction func showOnlyOfflineUsers(_ sender: UIButton) {

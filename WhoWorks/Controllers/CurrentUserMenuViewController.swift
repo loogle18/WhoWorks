@@ -13,7 +13,7 @@ class CurrentUserMenuViewController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userLogin: UILabel!
-    @IBOutlet weak var statusCircle: UILabel!
+    @IBOutlet weak var statusCircle: UIButton!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var teamListButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!

@@ -6,9 +6,62 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Statuses View Controller-->
+        <scene sceneID="83N-ge-ACM">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="pageSheet" id="Zeh-8L-mSs" customClass="StatusesViewController" customModule="WhoWorks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yKa-hf-y2U"/>
+                        <viewControllerLayoutGuide type="bottom" id="U9i-s4-TUz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pqs-3d-h2I">
+                        <rect key="frame" x="0.0" y="0.0" width="60" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cl-PN-7HH">
+                                <rect key="frame" x="10" y="71" width="40.000000000000099" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.85882352939999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="chooseStatus:" destination="Zeh-8L-mSs" eventType="touchUpInside" id="2F3-fG-rax"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-Z7-xp7">
+                                <rect key="frame" x="10" y="17" width="40.000000000000099" height="40.000000000000227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="chooseStatus:" destination="Zeh-8L-mSs" eventType="touchUpInside" id="ZMq-2Z-xVR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bve-ts-y0n">
+                                <rect key="frame" x="10" y="125" width="40.000000000000099" height="39.999999999999943"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.015686274510000001" green="0.85882352939999995" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="chooseStatus:" destination="Zeh-8L-mSs" eventType="touchUpInside" id="n8E-m0-M9p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="60" height="180"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="60" height="180"/>
+                    <connections>
+                        <outlet property="activeStatusCircle" destination="bve-ts-y0n" id="M9k-JR-pLd"/>
+                        <outlet property="doNotDisturbStatusCircle" destination="4Cl-PN-7HH" id="Y98-3U-E3o"/>
+                        <outlet property="offlineStatusCircle" destination="0fG-Z7-xp7" id="LMP-qv-o0Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qAm-3u-Qfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212.80000000000001" y="-555.02248875562225"/>
+        </scene>
         <!--Current User Menu-->
         <scene sceneID="luT-PE-th9">
             <objects>
@@ -77,14 +130,6 @@
                                         <rect key="frame" x="50" y="67" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veV-2W-XNV">
-                                        <rect key="frame" x="85" y="263" width="15" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.015686274509803921" green="0.85882352941176465" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDV-vf-7Lf">
                                         <rect key="frame" x="0.0" y="403" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -96,6 +141,11 @@
                                             <action selector="menuButtonHandler:" destination="gBv-nw-iyF" eventType="touchUpInside" id="i9g-Mg-r61"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6u4-Rh-4EO">
+                                        <rect key="frame" x="85" y="263" width="15" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.015686274510000001" green="0.85882352939999995" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.08235294118" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -106,7 +156,7 @@
                         <outlet property="avatarImageView" destination="pv6-BT-SNf" id="4fn-ju-feZ"/>
                         <outlet property="profileButton" destination="UDV-vf-7Lf" id="3z0-w4-A4Q"/>
                         <outlet property="settingsButton" destination="8lf-mD-O8f" id="zhk-TX-QlH"/>
-                        <outlet property="statusCircle" destination="veV-2W-XNV" id="yR8-I3-chK"/>
+                        <outlet property="statusCircle" destination="6u4-Rh-4EO" id="gOD-j2-Rq7"/>
                         <outlet property="teamListButton" destination="H95-FJ-FtA" id="hxt-rN-t4x"/>
                         <outlet property="userEmail" destination="pKt-to-c5R" id="2Qm-w8-k1J"/>
                         <outlet property="userLogin" destination="7ed-3O-XOD" id="Iw6-F7-bj4"/>
@@ -145,7 +195,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Profile" id="F6u-QP-l22">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="ATd-Ub-EDk">
+                                        <barButtonItem key="leftBarButtonItem" image="menu" id="ATd-Ub-EDk">
                                             <color key="tintColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="nx8-5a-IiI">
@@ -186,7 +236,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Settings" id="kLx-NO-YoW">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="rhp-JF-bgu">
+                                        <barButtonItem key="leftBarButtonItem" image="menu" id="rhp-JF-bgu">
                                             <color key="tintColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="VsN-BM-duc">
@@ -288,7 +338,10 @@
                                             <outlet property="loginName" destination="r5I-xi-N2e" id="GRI-l9-skP"/>
                                             <outlet property="status" destination="CG6-p7-djA" id="IBy-ho-8fX"/>
                                             <outlet property="statusCircle" destination="FwB-y4-QtL" id="BOR-dJ-5LW"/>
-                                            <segue destination="Dfx-ao-4Og" kind="show" identifier="ShowSelectedUser" id="KqJ-Sq-Yo5"/>
+                                            <segue destination="Dfx-ao-4Og" kind="show" identifier="ShowSelectedUser" id="KqJ-Sq-Yo5">
+                                                <segue key="commit" inheritsFrom="parent" id="2TL-yc-rnN"/>
+                                                <segue key="preview" inheritsFrom="commit" id="jxa-Yv-uUN"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -303,7 +356,7 @@
                                 <items>
                                     <navigationItem id="Z8q-SR-GsD">
                                         <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="7yJ-KN-vXs">
+                                        <barButtonItem key="leftBarButtonItem" image="menu" id="7yJ-KN-vXs">
                                             <color key="tintColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
                                         <view key="titleView" contentMode="scaleToFill" id="mfX-K3-2nR">
@@ -346,6 +399,22 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
+                                        <barButtonItem key="rightBarButtonItem" id="1St-VM-ez7">
+                                            <button key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KBC-hA-QS2">
+                                                <rect key="frame" x="299" y="7" width="60" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.015686274510000001" green="0.85882352939999995" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="17" maxY="0.0"/>
+                                                <state key="normal" image="sync">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="Zeh-8L-mSs" kind="popoverPresentation" identifier="showStatuses" popoverAnchorView="KBC-hA-QS2" id="M2b-Ry-ND3">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES"/>
+                                                    </segue>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -354,7 +423,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Find team members..." textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m4R-4s-S9n">
-                                        <rect key="frame" x="8" y="2" width="359" height="35"/>
+                                        <rect key="frame" x="49" y="2" width="318" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -364,6 +433,10 @@
                                             <action selector="searchUsers:" destination="Nc8-DO-cnJ" eventType="editingChanged" id="Qb0-f6-a0A"/>
                                         </connections>
                                     </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="cVa-hE-fYC">
+                                        <rect key="frame" x="16" y="12" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.08235294118" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -377,6 +450,7 @@
                     </view>
                     <connections>
                         <outlet property="activeUsersCounter" destination="OW6-Ft-IkT" id="bCD-eB-73T"/>
+                        <outlet property="changeStatusButton" destination="KBC-hA-QS2" id="Ish-me-Dgg"/>
                         <outlet property="doNotDisturbUsersCounter" destination="Yv4-9T-uSu" id="bgs-4k-xAW"/>
                         <outlet property="menuBarButton" destination="7yJ-KN-vXs" id="7DT-pf-LFw"/>
                         <outlet property="offlineUsersCounter" destination="K84-Sk-DX3" id="y6A-5Q-5vt"/>
@@ -461,4 +535,12 @@
             <point key="canvasLocation" x="1961" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="25" height="25"/>
+        <image name="search" width="25" height="25"/>
+        <image name="sync" width="25" height="25"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KqJ-Sq-Yo5"/>
+    </inferredMetricsTieBreakers>
 </document>
