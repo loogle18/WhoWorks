@@ -85,6 +85,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             SWRevealVC.frontViewController = userVC
             SWRevealVC.rearViewController = userMenuVC
             userVC.users = UserService.getUsers()
+            userVC.currentUser = createUserResponse as? User
             userMenuVC.currentUser = createUserResponse as? User
             
             self.present(SWRevealVC, animated: true, completion: nil)
