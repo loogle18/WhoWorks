@@ -22,16 +22,25 @@ class CurrentUserMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        avatarImageView.layer.cornerRadius = 80.0
-        statusCircle.layer.cornerRadius = 7.5
-        avatarImageView.image = currentUser?.avatar
-        statusCircle.layer.backgroundColor = currentUser?.statusColor.cgColor
-        userEmail.text = currentUser?.email
-        userLogin.text = currentUser?.login
+        initCurrenUserUIAndContent()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         initTogglerForButtons()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        statusCircle.layer.backgroundColor = currentUser?.statusColor.cgColor
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showUsersFromMenu" {
+            if let usersVC = segue.destination as? UsersViewController {
+                usersVC.currentUser = currentUser
+            }
+        }
     }
     
     @IBAction func logout(_ sender: UIButton) {
@@ -48,6 +57,15 @@ class CurrentUserMenuViewController: UIViewController {
                 addProperSegues(sender)
             }
         }
+    }
+    
+    private func initCurrenUserUIAndContent() {
+        avatarImageView.layer.cornerRadius = 80.0
+        statusCircle.layer.cornerRadius = 7.5
+        avatarImageView.image = currentUser?.avatar
+        statusCircle.layer.backgroundColor = currentUser?.statusColor.cgColor
+        userEmail.text = currentUser?.email
+        userLogin.text = currentUser?.login
     }
     
     private func initTogglerForButtons() {

@@ -22,26 +22,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="60" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cl-PN-7HH">
-                                <rect key="frame" x="10" y="71" width="40.000000000000099" height="40"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cl-PN-7HH">
+                                <rect key="frame" x="10" y="71" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.85882352939999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="do-not-disturb"/>
                                 <connections>
                                     <action selector="chooseStatus:" destination="Zeh-8L-mSs" eventType="touchUpInside" id="2F3-fG-rax"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-Z7-xp7">
-                                <rect key="frame" x="10" y="17" width="40.000000000000099" height="40.000000000000227"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-Z7-xp7">
+                                <rect key="frame" x="10" y="17" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" image="offline"/>
                                 <connections>
                                     <action selector="chooseStatus:" destination="Zeh-8L-mSs" eventType="touchUpInside" id="ZMq-2Z-xVR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bve-ts-y0n">
-                                <rect key="frame" x="10" y="125" width="40.000000000000099" height="39.999999999999943"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bve-ts-y0n">
+                                <rect key="frame" x="10" y="125" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.015686274510000001" green="0.85882352939999995" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="online"/>
                                 <connections>
                                     <action selector="chooseStatus:" destination="Zeh-8L-mSs" eventType="touchUpInside" id="n8E-m0-M9p"/>
                                 </connections>
@@ -536,7 +537,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="do-not-disturb" width="25" height="25"/>
         <image name="menu" width="25" height="25"/>
+        <image name="offline" width="25" height="25"/>
+        <image name="online" width="25" height="25"/>
         <image name="search" width="25" height="25"/>
         <image name="sync" width="25" height="25"/>
     </resources>

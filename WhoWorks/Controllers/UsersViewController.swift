@@ -9,7 +9,7 @@
 import UIKit
 import SWRevealViewController
 
-class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
+class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIPopoverPresentationControllerDelegate, PopoverViewControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var offlineUsersCounter: UIButton!
     @IBOutlet weak var doNotDisturbUsersCounter: UIButton!
@@ -31,7 +31,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         allOriginUsers = users
         UICustomizationService.searchTextField(searchTextField)
         changeStatusButton.layer.cornerRadius = 4.0
-        changeStatusButton.layer.backgroundColor = currentUser?.statusColor.cgColor
+        changeStatusButton.backgroundColor = currentUser?.statusColor
         initRevealVCLogic()
         initStatusCodeCountersUI()
         initStatusCodeCounters()
@@ -85,7 +85,9 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let vc = segue.destination as! StatusesViewController
             if let statusesPVC = vc.popoverPresentationController {
                 statusesPVC.delegate = self
+                vc.delegate = self
                 vc.currentStatusCode = currentUser?.statusCode ?? 2
+                vc.currentUserId = currentUser?.id
                 vc.preferredContentSize = CGSize(width: 60, height: 180)
                 statusesPVC.sourceRect = CGRect(x: 30.0, y: 35.0, width: 0.0, height: 0.0)
             }
@@ -94,6 +96,16 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
+    }
+    
+    func updateCurrentUser(_ statusCode: UInt8, _ statusColor: UIColor) {
+        currentUser?.statusCode = statusCode
+        currentUser?.statusColor = statusColor
+        changeStatusButton.backgroundColor = statusColor
+        users = UserService.getUsers()
+        allOriginUsers = users
+        initStatusCodeCounters()
+        tableView.reloadData()
     }
     
     @IBAction func showOnlyOfflineUsers(_ sender: UIButton) {

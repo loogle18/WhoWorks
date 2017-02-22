@@ -19,6 +19,10 @@ class UserService {
         return "http://localhost:3000/api/v1/auth"
     }
     
+    private class var updateStatusCodeUrl : String {
+        return "http://localhost:3000/api/v1/update_status"
+    }
+    
     private class func createUserFromResponse(_ response: Dictionary<String, Any>) -> User {
         let user = User(
             id: response["id"] as! UInt16, login: response["login"] as! String, email: response["email"] as! String,
@@ -68,5 +72,10 @@ class UserService {
             result = resp.statusCode
         }
         return result
+    }
+    
+    class func updateStatusCode(_ parameters: [Any]) {
+        let params = ["user" : ["id" : parameters[0], "status_code" : parameters[1]]]
+        _ = Alamofire.request(updateStatusCodeUrl, method: .post, parameters: params).responseJSON()
     }
 }

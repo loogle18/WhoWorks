@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol PopoverViewControllerDelegate {
+    func updateCurrentUser(_ statusCode: UInt8, _ statusColor: UIColor)
+}
+
 class StatusesViewController: UIViewController {
     @IBOutlet weak var offlineStatusCircle: UIButton!
     @IBOutlet weak var doNotDisturbStatusCircle: UIButton!
     @IBOutlet weak var activeStatusCircle: UIButton!
     
     var currentStatusCode: UInt8 = 2
+    var currentUserId: UInt16?
+    var delegate: PopoverViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,23 +27,38 @@ class StatusesViewController: UIViewController {
     }
     
     @IBAction func chooseStatus(_ sender: UIButton) {
+        let newStatusCode = buttonToStatusCode(sender)
+        let newStatusColor = UIColor(cgColor: sender.layer.borderColor!)
+        
+        UserService.updateStatusCode([currentUserId as Any, newStatusCode])
+        
+        self.delegate?.updateCurrentUser(newStatusCode, newStatusColor)
         self.dismiss(animated: true, completion: nil)
     }
     
+    
     private func initStatuses(_ statusCode: UInt8) {
-        for circleButton in [offlineStatusCircle, doNotDisturbStatusCircle, activeStatusCircle] {
+        let statusCircles = [offlineStatusCircle, doNotDisturbStatusCircle, activeStatusCircle]
+        
+        for circleButton in statusCircles {
             circleButton?.layer.cornerRadius = 20.0
-            circleButton?.layer.borderWidth = 2.0
-            circleButton?.layer.borderColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.0).cgColor
+            circleButton?.layer.borderWidth = 0.0
         }
         
-        switch statusCode {
-            case 0:
-                offlineStatusCircle.layer.borderColor = UIColor.customLightGray().cgColor
-            case 1:
-                doNotDisturbStatusCircle.layer.borderColor = UIColor.customLightGray().cgColor
+        offlineStatusCircle.layer.borderColor = UIColor.customRed().cgColor
+        doNotDisturbStatusCircle.layer.borderColor = UIColor.customYellow().cgColor
+        activeStatusCircle.layer.borderColor = UIColor.customGreen().cgColor
+        statusCircles[Int(statusCode)]?.layer.borderWidth = 2.0
+    }
+    
+    private func buttonToStatusCode(_ button: UIButton) -> UInt8 {
+        switch button {
+            case offlineStatusCircle:
+                return 0
+            case doNotDisturbStatusCircle:
+                return 1
             default:
-                activeStatusCircle.layer.borderColor = UIColor.customLightGray().cgColor
+                return 2
         }
     }
 }
