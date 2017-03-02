@@ -11,13 +11,22 @@ import SWRevealViewController
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
+    
+    var currentUser: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initRevealVCLogic()
     }
     
-    @objc private func initRevealVCLogic() {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEditProfile" {
+            let editProfileVC = segue.destination as! EditProfileViewController
+            editProfileVC.currentUser = currentUser
+        }
+    }
+    
+    private func initRevealVCLogic() {
         if let revealVC = revealViewController() {
             menuBarButton.target = revealVC
             menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))

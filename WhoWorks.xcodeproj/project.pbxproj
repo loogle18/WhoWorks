@@ -21,6 +21,7 @@
 		A18A79371E4A6BEE001387F6 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79361E4A6BEE001387F6 /* ValidationService.swift */; };
 		A18A79391E4A869D001387F6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A79381E4A869D001387F6 /* RegisterViewController.swift */; };
 		A18E62CE1E53E4950078CA5F /* CurrentUserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18E62CD1E53E4950078CA5F /* CurrentUserMenuViewController.swift */; };
+		A1A244D91E62096B00E5E741 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A244D81E62096B00E5E741 /* EditProfileViewController.swift */; };
 		A1E025231E4F3A67004AB7AA /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E025221E4F3A67004AB7AA /* UserViewController.swift */; };
 		A1E601CE1E5BA5510090AD38 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E601CD1E5BA5510090AD38 /* UIColor.swift */; };
 		A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC2F31E4760FB00CC502A /* UserService.swift */; };
@@ -52,6 +53,13 @@
 			remoteGlobalIDString = 0119CCB981D411807592F08A8CD88932;
 			remoteInfo = "Alamofire-Synchronous";
 		};
+		A1A244DF1E62096C00E5E741 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A15F2C2D1E467867002FAF24 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 628DBC32908EB3E4FBF731F3D8CE1431;
+			remoteInfo = JVFloatLabeledTextField;
+		};
 		A1FE94F81E5A54CF00B6B1CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A15F2C2D1E467867002FAF24 /* Pods.xcodeproj */;
@@ -81,6 +89,7 @@
 		A18A79361E4A6BEE001387F6 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		A18A79381E4A869D001387F6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A18E62CD1E53E4950078CA5F /* CurrentUserMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserMenuViewController.swift; sourceTree = "<group>"; };
+		A1A244D81E62096B00E5E741 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A1E025221E4F3A67004AB7AA /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A1E601CD1E5BA5510090AD38 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A1EFC2F31E4760FB00CC502A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -159,6 +168,7 @@
 			children = (
 				A15F2C331E467867002FAF24 /* Alamofire.framework */,
 				A18A79331E4A5B81001387F6 /* Alamofire_Synchronous.framework */,
+				A1A244E01E62096C00E5E741 /* JVFloatLabeledTextField.framework */,
 				A15F2C351E467867002FAF24 /* Pods_WhoWorks.framework */,
 				A1FE94F91E5A54CF00B6B1CE /* SWRevealViewController.framework */,
 			);
@@ -178,6 +188,7 @@
 				A1FE94DE1E59F92600B6B1CE /* ProfileViewController.swift */,
 				A1FE94E31E5A004600B6B1CE /* SettingsViewController.swift */,
 				A188D4731E5D098200958FCB /* StatusesViewController.swift */,
+				A1A244D81E62096B00E5E741 /* EditProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,6 +315,13 @@
 			remoteRef = A18A79321E4A5B81001387F6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		A1A244E01E62096C00E5E741 /* JVFloatLabeledTextField.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JVFloatLabeledTextField.framework;
+			remoteRef = A1A244DF1E62096C00E5E741 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A1FE94F91E5A54CF00B6B1CE /* SWRevealViewController.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -390,6 +408,7 @@
 				A117D3191E4E6D6D008A098D /* UsersViewController.swift in Sources */,
 				A1EFC2F41E4760FB00CC502A /* UserService.swift in Sources */,
 				A18E62CE1E53E4950078CA5F /* CurrentUserMenuViewController.swift in Sources */,
+				A1A244D91E62096B00E5E741 /* EditProfileViewController.swift in Sources */,
 				A1FE94E41E5A004600B6B1CE /* SettingsViewController.swift in Sources */,
 				A13A5CCB1E4D0E76003E2F36 /* UserTableViewCell.swift in Sources */,
 				A10ECE571E3FD42E0000A557 /* ViewController.swift in Sources */,

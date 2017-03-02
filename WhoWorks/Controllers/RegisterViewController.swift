@@ -46,7 +46,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func onFocusTextField(_ sender: UITextField) {
-        var placeholder : String!
+        var placeholder: String!
         switch sender {
             case loginNameTextField:
                 placeholder = loginNamePlaceholder

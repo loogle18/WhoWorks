@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JVFloatLabeledTextField
 
 struct UICustomizationService {
     static func defaultTextFieldUI(_ textField: UITextField, placeholder: String) {

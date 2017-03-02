@@ -37,9 +37,11 @@ class CurrentUserMenuViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showUsersFromMenu" {
-            if let usersVC = segue.destination as? UsersViewController {
-                usersVC.currentUser = currentUser
-            }
+            let usersVC = segue.destination as! UsersViewController
+            usersVC.currentUser = currentUser
+        } else if segue.identifier == "showProfileFromMenu" {
+            let profileVC = segue.destination as! ProfileViewController
+            profileVC.currentUser = currentUser
         }
     }
     
